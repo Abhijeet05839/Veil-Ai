@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VEIL.AI — AI That Lives In Your Workflow</title>
+<meta name="description" content="The on-demand AI companion that sees exactly what you see. Press Ctrl+Shift+Space inside any app.">
+<meta property="og:title" content="VEIL.AI — AI That Lives In Your Workflow">
+<meta property="og:description" content="The on-demand AI companion that sees exactly what you see.">
+<meta property="og:image" content="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'><rect width='1200' height='630' fill='%2305080F'/><text x='600' y='320' font-family='Inter,sans-serif' font-size='80' font-weight='800' fill='%234F8EF7' text-anchor='middle'>VEIL</text></svg>">
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><polygon points='16,3 28,10 28,22 16,29 4,22 4,10' fill='none' stroke='%234F8EF7' stroke-width='2.5'/><text x='16' y='21' font-family='Inter,sans-serif' font-size='14' font-weight='800' fill='%234F8EF7' text-anchor='middle'>C</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/splitting/1.0.6/splitting.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/> -->
+ 
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- <div class="announce" id="announce">
+  <a href="#" data-magnetic> VEIL.AI just launched — We're live on Product Hunt today →</a>
+  <button class="x" id="dismissAnnounce" aria-label="Dismiss">✕</button>
+</div> -->
+
+<nav class="nav" id="nav">
+  <a href="#" class="logo" data-magnetic>
+    <span class="hex"><img src="Veil logo.png" alt="" width="50px"></span><span class="name">VEIL</span><span class="ai" style="color:var(--blue)">AI</span>
+  </a>
+  <div class="nav-links">
+    <a href="#use-cases" data-magnetic>Features</a>
+    <a href="#how" data-magnetic>How It Works</a>
+    <a href="#use-cases" data-magnetic>Use Cases</a>
+    <!-- <a href="#pricing" data-magnetic>Pricing</a> -->
+    <a href="#privacy" data-magnetic>Privacy</a>
+  </div>
+  <div class="nav-right">
+    
+    <a href="#cta" class="btn-primary" data-magnetic>Download Now →</a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="three-bg" width="1920" height="1080"></canvas>
+  <div class="hero-inner">
+    <div class="hero">
+      <!-- <div class="hero-badge"><span class="dot"></span> 500+ devs already in beta</div> -->
+      <h1 id="heroH1">
+        <span class="l" data-splitting>Your AI.</span>
+        <span class="l gradient" data-splitting>Right Here.</span>
+        <span class="l" data-splitting>Right Now.</span>
+      </h1>
+      <p class="subhead">VEIL.AI captures your screen the instant you need help — and delivers precise AI answers inside your exact moment of need. No tab switching. No copy-paste. No broken flow.</p>
+      <div class="cta-row">
+        <div style="position:relative">
+          <button class="btn-hero-primary" data-magnetic id="dlBtn">Download Free <span style="font-size:11px;color:rgba(255,255,255,0.7)">▾</span></button>
+          <div class="os-dropdown" id="osDrop">
+            <a href="#" data-magnetic>🪟 Windows · .exe (52MB)</a>
+            <a href="#" data-magnetic>🍎 macOS · .dmg (48MB)</a>
+            <a href="#" data-magnetic>🐧 Linux · .AppImage (54MB)</a>
+          </div>
+        </div>
+        <button class="btn-hero-secondary" data-magnetic>▶ Watch Demo</button>
+      </div>
+      <div class="trust">
+        <span>⌨ Ctrl+Shift+Space</span>
+        <span>·</span>
+        <span>✦ Works in any app</span>
+        <span>·</span>
+        <span>⬡ Local-first privacy</span>
+      </div>
+    </div>
+    <div class="mockup-wrap">
+      <div class="mockup">
+        <div class="vscode">
+          <div class="vscode-bar"><div class="tl"><span></span><span></span><span></span></div><span style="margin-left:8px">main.py — VS Code</span></div>
+          <div class="vscode-tabs"><div class="tab active">main.py ×</div><div class="tab">utils.py</div></div>
+          <div class="vscode-body">
+            <div class="row"><span class="ln">1</span><span><span class="k">def</span> <span class="fn">calculate_average</span>(<span class="v">numbers</span>):</span></div>
+            <div class="row"><span class="ln">2</span><span>    <span class="v">total</span> = <span class="fn">sum</span>(<span class="v">numbers</span>)</span></div>
+            <div class="row"><span class="ln">3</span><span>    <span class="k">return</span> <span class="squiggle">total / <span class="fn">len</span>(numbers)</span></span></div>
+            <div class="row"><span class="ln">4</span><span></span></div>
+            <div class="row"><span class="ln">5</span><span><span class="v">result</span> = <span class="fn">calculate_average</span>([])</span></div>
+            <div class="row"><span class="ln">6</span><span><span class="fn">print</span>(<span class="v">result</span>)</span></div>
+          </div>
+          <div class="vscode-term">
+            <div style="color:#8b949e;font-size:11px;margin-bottom:4px">TERMINAL</div>
+            <div class="terr">Traceback (most recent call last):</div>
+            <div>  File "main.py", line 5, in &lt;module&gt;</div>
+            <div class="terr">ZeroDivisionError: division by zero<span class="term-cursor"></span></div>
+          </div>
+        </div>
+        <div class="ctx-overlay">
+          <div class="ctx-glow"></div>
+          <div class="ctx-head">
+            <div class="l"><span style="color:var(--blue)">⬡</span> VEIL.AI</div>
+            <div class="live"><span class="dot"></span> Live</div>
+          </div>
+          <div class="ctx-thumb"></div>
+          <div class="ctx-query">› Fix this ZeroDivisionError</div>
+          <div class="ctx-resp">The bug is on line 3. When <code style="color:var(--blue);font-family:var(--mono)">numbers</code> is empty, <code style="color:var(--blue);font-family:var(--mono)">len([])</code> returns 0, causing division by zero.
+            <div class="ctx-code"><span class="green">if not numbers: return 0</span><br>return total / len(numbers)<span class="tcursor"></span></div>
+          </div>
+          <div class="ctx-actions">
+            <button class="ctx-btn" data-magnetic>Copy ⎘</button>
+            <button class="ctx-btn" data-magnetic>Apply ↗</button>
+            <button class="ctx-btn" data-magnetic>More →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+ <div class="news-container">
+      <div class="news">
+        <div class="track">
+          <span>Real-Time Screen Intelligence &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Context-Aware AI Assistance &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Instant Code Debugging &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>AI-Powered Workflow Optimization &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>No Tab Switching Experience &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Overlay-Based AI Interface &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Understand Any Screen Instantly &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>AI That Thinks With You &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Smarter Browsing Experience &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Summarize Anything in Seconds &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Voice + Text Interaction &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>AI for Developers & Creators &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Zero Context Loss &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Smart UI Understanding &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Next-Gen Human + AI Workflow &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>AI Layer Over Every App &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Frictionless Productivity &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Explain Errors Instantly &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Extract Insights From Anything &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Work Smarter, Not Harder &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+
+<!-- Repeat for smooth infinite marquee -->
+<span>Real-Time Screen Intelligence &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Context-Aware AI Assistance &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Instant Code Debugging &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>AI-Powered Workflow Optimization &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>No Tab Switching Experience &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+<span>Overlay-Based AI Interface &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-regular fa-star"></i>&nbsp;&nbsp;</span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">The Flow</div>
+      <h2 class="sec-title">From question to answer in 5 keystrokes.</h2>
+      <p class="sec-sub">The fastest human-AI feedback loop ever built.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-sticky">
+        <div class="how-mock">
+          <div class="how-stage active" data-stage="0">
+            <div style="position:relative;display:flex;align-items:center;justify-content:center">
+              <div class="ripple"></div><div class="ripple r2"></div><div class="ripple r3"></div>
+              <div class="kbd-key">⌘</div>
+            </div>
+            <div style="margin-top:30px;font-family:var(--mono);font-size:12px;color:var(--text-2)">Ctrl+Shift+Space</div>
+          </div>
+          <div class="how-stage" data-stage="1">
+            <div class="flash-screen"><div class="cap-frame"></div>
+              <div style="position:absolute;bottom:14px;left:14px;font-family:var(--mono);font-size:11px;color:var(--teal)">📷 Captured · 180ms</div>
+            </div>
+          </div>
+          <div class="how-stage" data-stage="2">
+            <div class="bbox-stage">
+              <div style="margin-bottom:8px">def calculate_average(numbers):</div>
+              <div style="position:relative">
+                <div class="bb" style="border:1.5px solid var(--coral);left:-4px;top:-4px;right:-4px;height:24px;animation-delay:.2s"><div class="bb-label" style="background:var(--coral)">Error detected</div></div>
+                <div>    return total / len(numbers)</div>
+              </div>
+              <div style="margin-top:14px;position:relative">
+                <div class="bb" style="border:1.5px solid var(--blue);left:-4px;top:-4px;right:-4px;height:24px;animation-delay:.7s"><div class="bb-label" style="background:var(--blue)">Function</div></div>
+                <div>def main():</div>
+              </div>
+              <div style="margin-top:14px;position:relative">
+                <div class="bb" style="border:1.5px solid var(--amber);left:-4px;top:-4px;right:-4px;height:24px;animation-delay:1.2s"><div class="bb-label" style="background:var(--amber)">Bug: line 3</div></div>
+                <div>  result = calc([])</div>
+              </div>
+            </div>
+          </div>
+          <div class="how-stage" data-stage="3">
+            <div style="width:100%">
+              <div class="input-fake"><span class="typed" id="typedQuery">Fix this ZeroDivisionError on line 3</span><span class="cursor-i"></span></div>
+              <div style="margin-top:14px;display:flex;gap:10px;align-items:center;color:var(--text-2);font-size:12px">
+                <div style="width:36px;height:36px;border-radius:50%;background:rgba(63,93,78,0.15);display:flex;align-items:center;justify-content:center">🎤</div>
+                <span>Voice · Type · Hinglish · Multilingual</span>
+              </div>
+            </div>
+          </div>
+          <div class="how-stage" data-stage="4">
+            <div class="stream-stage">
+              <div style="color:var(--text-3);margin-bottom:8px">› VEIL.AI</div>
+              <div id="streamFinal">Found the bug. Line 3 crashes when numbers is empty because len([]) = 0.<br><br><span style="color:var(--teal)">if not numbers: return 0</span></div>
+              <div style="margin-top:12px;display:flex;gap:6px"><button class="ctx-btn">Copy</button><button class="ctx-btn">Apply</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="how-steps">
+        <div class="how-step" data-step="0">
+          <div class="step-num">01</div>
+          <h3 class="step-title">Press the hotkey.</h3>
+          <p class="step-body">Ctrl+Shift+Space on Windows · Cmd+Shift+Space on Mac. Works from inside any app — VS Code, Chrome, Figma, Excel, Terminal, anything.</p>
+          <div class="step-stat">&lt; 300ms overlay appears</div>
+        </div>
+        <div class="how-step" data-step="1">
+          <div class="step-num">02</div>
+          <h3 class="step-title">Screen captured instantly.</h3>
+          <p class="step-body">VEIL.AI takes a snapshot of exactly what you're looking at — full screen, active window, or a region you select. 180ms. Done.</p>
+          <div class="step-stat">&lt; 200ms capture</div>
+        </div>
+        <div class="how-step" data-step="2">
+          <div class="step-num">03</div>
+          <h3 class="step-title">Vision AI reads your screen.</h3>
+          <p class="step-body">VEIL.AI identifies code, errors, charts, PDFs, emails, terminals — anything visible. OCR accuracy &gt; 95%. Content classified in milliseconds.</p>
+          <div class="step-stat">95% OCR accuracy</div>
+        </div>
+        <div class="how-step" data-step="3">
+          <div class="step-num">04</div>
+          <h3 class="step-title">Ask anything. Type or speak.</h3>
+          <p class="step-body">Natural language. Hinglish. Voice. Multilingual. Just say what you need — VEIL.AI already knows what you're looking at.</p>
+          <div class="step-stat">12 languages supported</div>
+        </div>
+        <div class="how-step" data-step="4">
+          <div class="step-num">05</div>
+          <h3 class="step-title">Precise answer. Right now.</h3>
+          <p class="step-body">Responses reference your actual screen content — no hallucinations, no generic answers. And you never left your application.</p>
+          <div class="step-stat">&lt; 5s end-to-end</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- USE CASES BENTO -->
+<section id="use-cases" class="sec-pad">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Built for Everyone</div>
+      <h2 class="sec-title">One tool. Every workflow.</h2>
+      <p class="sec-sub">From debugging to deep work — VEIL.AI adapts to whatever's on your screen.</p>
+    </div>
+    <div class="bento scene">
+      <div class="card-3d c1">
+        <div class="card-shine"></div>
+        <div class="icon">{ }</div>
+        <h3>Debug without breaking flow.</h3>
+        <p>Stack trace? Compile error? Confusing exception? Press the hotkey, get the fix — applied right where you are. No more Stack Overflow tabs.</p>
+        <div class="mini-vscode">
+          <div class="top"><span style="background:#FF5F56"></span><span style="background:#FFBD2E"></span><span style="background:#27C93F"></span></div>
+          <div class="body">
+            <div>def avg(nums):</div>
+            <div>  return total / <span class="mini-err">len(nums)</span></div>
+            <div style="color:#F85149;margin-top:6px">ZeroDivisionError ⚠</div>
+          </div>
+          <div class="mini-ctx"><strong style="color:var(--blue)">⬡ VEIL.AI</strong><br>Add: <span style="color:#7ee787">if not nums: return 0</span></div>
+        </div>
+      </div>
+      <div class="card-3d c2">
+        <div class="card-shine"></div>
+        <div class="icon"><i class="fa-solid fa-book" style="color: #B8742E;"></i></div>
+        <h3>Read smarter. Study faster.</h3>
+        <p>Drop a 40-page paper on screen. Get summaries, key findings, simpler explanations — without leaving the PDF.</p>
+        <div class="pdf-anim">
+          <div class="pblk" style="width:80%"></div>
+          <div class="pblk hl" style="width:95%"></div>
+          <div class="pblk hl" style="width:70%"></div>
+          <div class="pblk" style="width:88%"></div>
+          <div class="pblk hl" style="width:60%"></div>
+          <div class="pdf-bullets">• 3 key findings extracted<br>• Methodology summarized<br>• 8 citations identified</div>
+        </div>
+      </div>
+      <div class="card-3d c3">
+        <div class="card-shine"></div>
+        <div class="icon"><i class="fa-solid fa-database" style="color: #B8742E;"></i></div>
+        <h3>Insight, not just data.</h3>
+        <p>Spike in your dashboard? Ask VEIL.AI what caused it. Get instant analysis on whatever chart you're staring at.</p>
+        <div class="chart-anim">
+          <svg viewBox="0 0 200 100" preserveAspectRatio="none">
+            <path class="line" d="M0,80 L30,70 L60,75 L90,60 L120,55 L150,15 L180,40 L200,35" stroke="url(#tealg)" stroke-width="2" fill="none"/>
+            <defs><linearGradient id="tealg"><stop offset="0%" stop-color="#2DD4A0"/><stop offset="100%" stop-color="#4F8EF7"/></linearGradient></defs>
+            <circle cx="150" cy="15" r="4" fill="#FF6B6B"/>
+          </svg>
+          <div class="chart-q">Day 14 spike: traffic +340%</div>
+        </div>
+      </div>
+      <div class="card-3d c4">
+        <div class="card-shine"></div>
+        <div class="icon">✉</div>
+        <h3>Communicate effortlessly.</h3>
+        <p>Email, Slack, LinkedIn — VEIL.AI helps you write replies that hit the right tone, every time.</p>
+        <div class="email-anim">
+          <div class="from">From: Sarah · Re: Project timeline</div>
+          <div>Could we push the deadline to next Friday?</div>
+          <div class="reply">Reply: Absolutely — Friday works. I'll have the v2 draft ready by Wed for your review.</div>
+        </div>
+      </div>
+      <div class="card-3d c5">
+        <div class="card-shine"></div>
+        <div class="icon">❤</div>
+        <h3 style="font-size:18px">Wellbeing</h3>
+        <div class="heart">♥</div>
+        <div class="timer-d">1:32:00</div>
+        <p style="font-size:12px;margin-top:6px">Take a break.</p>
+      </div>
+      <div class="card-3d c6">
+        <div class="card-shine"></div>
+        <div class="icon"><i class="fa-solid fa-lock" style="color: #B8742E;"></i></div>
+        <h3 style="font-size:18px">Privacy</h3>
+        <div style="font-size:48px;margin:8px 0;color:var(--teal)">🛡</div>
+        <p style="font-size:12px">Local-first. Always.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><div class="num" data-count="300" data-prefix="<" data-suffix="ms">&lt;0ms</div><div class="lbl">Overlay activation</div></div>
+      <div class="stat"><div class="num" data-count="5" data-prefix="<" data-suffix="s">&lt;0s</div><div class="lbl">Full AI response</div></div>
+      <div class="stat"><div class="num" data-count="0">0</div><div class="lbl">App switches required</div></div>
+      <div class="stat"><div class="num" data-count="95" data-suffix="%">0%</div><div class="lbl">Screen interpretation</div></div>
+      <div class="stat"><div class="num" data-count="10" data-suffix="x">0x</div><div class="lbl">Faster than copy-paste</div></div>
+      <div class="stat"><div class="num" data-count="100" data-suffix="%">0%</div><div class="lbl">Local-first processing</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="sec-pad">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">vs The World</div>
+      <h2 class="sec-title">The AI assistance gap, finally closed.</h2>
+    </div>
+    <div class="compare">
+      <table>
+        <thead>
+          <tr><th>Feature</th><th>ChatGPT</th><th>GitHub Copilot</th><th>Grammarly</th><th class="us"><span class="compare-grad">VEIL.AI</span></th></tr>
+        </thead>
+        <tbody id="compareBody">
+          <tr><td>Works in any app</td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td class="us"><span class="yes">✓</span></td></tr>
+          <tr><td>Screen-aware vision</td><td><span class="no">✗</span></td><td><span class="partial">partial</span></td><td><span class="no">✗</span></td><td class="us"><span class="yes">✓</span></td></tr>
+          <tr><td>Zero tab switching</td><td><span class="no">✗</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td class="us"><span class="yes">✓</span></td></tr>
+          <tr><td>Multi-content types</td><td><span class="no">✗</span></td><td><span class="partial">code only</span></td><td><span class="partial">text</span></td><td class="us"><span class="yes">✓</span></td></tr>
+          <tr><td>Local-first privacy</td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td class="us"><span class="yes">✓</span></td></tr>
+          <tr><td>Session memory</td><td><span class="no">✗</span></td><td><span class="partial">partial</span></td><td><span class="no">✗</span></td><td class="us"><span class="yes">✓</span></td></tr>
+          <tr><td>Voice input</td><td><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td class="us"><span class="yes">✓</span></td></tr>
+          <tr><td>Wellbeing features</td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td class="us"><span class="yes">✓</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- PRIVACY -->
+<section id="privacy">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Privacy</div>
+      <h2 class="sec-title">Built private. Stays private.</h2>
+      <p class="sec-sub">Most AI tools ship your screen to a server. We don't.</p>
+    </div>
+    <div class="privacy-grid">
+      <ul class="priv-list" id="privList">
+        <li><svg class="check-svg" viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7"/></svg><span>User-triggered only — zero background capture</span></li>
+        <li><svg class="check-svg" viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7"/></svg><span>Local OCR — classification runs on-device</span></li>
+        <li><svg class="check-svg" viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7"/></svg><span>Screenshots never leave your device raw</span></li>
+        <li><svg class="check-svg" viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7"/></svg><span>No keystroke logging, ever</span></li>
+        <li><svg class="check-svg" viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7"/></svg><span>One-click delete everything</span></li>
+        <li><svg class="check-svg" viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7"/></svg><span>Compliant: GDPR · DPDP Act India</span></li>
+      </ul>
+      <div>
+        <svg class="flow-svg" viewBox="0 0 400 320">
+          <rect class="node" x="20" y="20" width="100" height="36" rx="8"/>
+          <text class="node-text" x="70" y="42">Your Screen</text>
+          <path class="path-d" d="M120,38 L160,38"/>
+          <rect class="node" x="160" y="20" width="100" height="36" rx="8"/>
+          <text class="node-text" x="210" y="42">On-device OCR</text>
+          <path class="path-d" d="M260,38 L300,38"/>
+          <rect class="node" x="300" y="20" width="80" height="36" rx="8"/>
+          <text class="node-text" x="340" y="42">Text only</text>
+          <path class="path-d" d="M340,56 L340,100 L210,100 L210,140"/>
+          <rect class="node" x="160" y="140" width="100" height="36" rx="8"/>
+          <text class="node-text" x="210" y="162">Claude API</text>
+          <path class="path-d" d="M210,176 L210,220"/>
+          <rect class="node" x="140" y="220" width="140" height="36" rx="8" style="stroke:var(--teal)"/>
+          <text class="node-text" x="210" y="242" style="fill:var(--teal)">Response → You</text>
+          <path class="x-path" d="M70,56 L70,100 L70,140"/>
+          <rect class="node" x="20" y="140" width="100" height="36" rx="8" style="stroke:var(--coral)"/>
+          <text class="node-text" x="70" y="162" style="fill:var(--coral)">Server (raw)</text>
+          <text class="x-mark" x="70" y="105">✗</text>
+          <text x="70" y="200" style="fill:var(--coral);font-size:9px;text-anchor:middle">NEVER HAPPENS</text>
+        </svg>
+        <div class="compliance">
+          <span>GDPR</span><span>DPDP Act India</span><span>TLS 1.3</span><span>AES-256</span><span>SOC 2 (in audit)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-orbs">
+    <div class="cta-orb o1"></div>
+    <div class="cta-orb o2"></div>
+    <div class="cta-orb o3"></div>
+  </div>
+  <div class="cta-inner">
+    <div class="cta-label">The new paradigm for human-AI interaction</div>
+    <h2 id="ctaH2"><span class="l" data-splitting>Stop switching.</span><span class="l gradient" data-splitting>Start flowing.</span></h2>
+    <p class="sub">Join 500+ developers, students and analysts who eliminated context-switching.</p>
+    <div class="os-row">
+      <a href="#" class="os-btn" data-magnetic>
+        <svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z"/></svg>
+        <div><div class="lbl">Download for Windows</div><div class="meta">v1.0.0-beta</div></div>
+      </a>
+      <a href="#" class="os-btn" data-magnetic>
+        <svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M17.05 12.04c-.03-2.43 1.99-3.6 2.08-3.66-1.13-1.66-2.9-1.89-3.53-1.92-1.5-.15-2.93.88-3.69.88-.77 0-1.94-.86-3.19-.84-1.64.02-3.16.95-4 2.42-1.71 2.97-.44 7.36 1.22 9.77.81 1.18 1.78 2.5 3.04 2.45 1.22-.05 1.69-.79 3.16-.79 1.47 0 1.89.79 3.18.77 1.31-.02 2.14-1.2 2.94-2.39.93-1.37 1.31-2.7 1.33-2.77-.03-.01-2.55-.98-2.58-3.92zM14.4 4.5c.66-.81 1.11-1.94 1-3.06-.95.04-2.13.64-2.81 1.45-.61.71-1.15 1.87-1.01 2.97 1.07.08 2.16-.55 2.82-1.36z"/></svg>
+        <div><div class="lbl">Download for macOS</div><div class="meta">Coming Soon!</div></div>
+      </a>
+      <a href="#" class="os-btn" data-magnetic>
+        <svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15v-5l4 2.5L10 17z"/></svg>
+        <div><div class="lbl">Download for Linux</div><div class="meta">Coming Soon!</div></div>
+      </a>
+    </div>
+    <!-- <div class="cli-cmds">brew install veil<span>·</span>winget install veil<span>·</span>snap install veil</div> -->
+    <!-- <form class="waitlist" id="waitlist">
+      <input type="email" placeholder="Enter your email..." required>
+      <button type="submit" data-magnetic>Join waitlist →</button>
+      <div class="success-msg"><svg class="success-check" viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7"/></svg> You're on the list!</div>
+    </form> -->
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="logo"><span class="hex"><img src="Veil logo.png" alt="" width="50px"></span><span class="name">VEIL</span><span style="color:var(--blue)">AI</span></div>
+        <p class="foot-tag">The on-demand AI companion that sees exactly what you see.</p>
+        <div class="socials">
+          <a href="#" class="social" data-magnetic aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A12 12 0 0012 .3"/></svg></a>
+          <a href="#" class="social" data-magnetic aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" class="social" data-magnetic aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.79 19.79 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></a>
+          <a href="#" class="social" data-magnetic aria-label="Product Hunt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm1.5 13.5h-3v3H9V7.5h4.5c1.7 0 3 1.3 3 3s-1.3 3-3 3zm0-4.5h-3v3h3c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h5>Product</h5><ul><li><a href="#" data-magnetic>Features</a></li><li><a href="#" data-magnetic>Changelog</a></li><li><a href="#" data-magnetic>Roadmap</a></li><li><a href="#" data-magnetic>Status</a></li><li><a href="#" data-magnetic>GitHub</a></li></ul></div>
+      <div class="foot-col"><h5>Resources</h5><ul><li><a href="#" data-magnetic>Docs</a></li><li><a href="#" data-magnetic>API Reference</a></li><li><a href="#" data-magnetic>Blog</a></li><li><a href="#" data-magnetic>Integrations</a></li><li><a href="#" data-magnetic>Tutorials</a></li></ul></div>
+      <div class="foot-col"><h5>Company</h5><ul><li><a href="#" data-magnetic>About</a></li><li><a href="#" data-magnetic>Privacy Policy</a></li><li><a href="#" data-magnetic>Terms</a></li><li><a href="#" data-magnetic>Contact</a></li><li><a href="#" data-magnetic>Press Kit</a></li></ul></div>
+      <div class="foot-col"><h5>Community</h5><ul><li><a href="#" data-magnetic>Discord</a></li><li><a href="#" data-magnetic>Reddit</a></li><li><a href="#" data-magnetic>Twitter</a></li><li><a href="#" data-magnetic>Product Hunt</a></li><li><a href="#" data-magnetic>Newsletter</a></li></ul></div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 VEIL.AI · Made for focus</span>
+      <span>v1.0.0-beta</span>
+      <span>Press <span style="font-family:var(--mono);background:rgba(28,26,23,0.06);padding:2px 6px;border-radius:4px">?</span> for shortcuts</span>
+    </div>
+  </div>
+</footer>
+
+<!-- EASTER EGG -->
+<div class="egg" id="egg">
+  <div class="egg-panel">
+    <h3><span style="color:var(--blue)">⬡</span> You just triggered VEIL.AI ⚡</h3>
+    <div class="sub">This is exactly how it feels inside any app.</div>
+    <div class="egg-resp" id="eggResp"></div>
+    <div class="egg-hint">Press <kbd style="font-family:var(--mono);background:rgba(28,26,23,0.06);padding:2px 6px;border-radius:4px">Esc</kbd> to dismiss</div>
+  </div>
+</div>
+
+<div class="kbd-modal" id="kbdModal">
+  <div class="kbd-panel">
+    <h4>Keyboard Shortcuts</h4>
+    <div class="kbd-row"><span>Trigger VEIL.AI</span><span class="keys">Ctrl + Shift + Space</span></div>
+    <div class="kbd-row"><span>Show shortcuts</span><span class="keys">?</span></div>
+    <div class="kbd-row"><span>Dismiss overlay</span><span class="keys">Esc</span></div>
+    <div class="kbd-row"><span>Voice input</span><span class="keys">Ctrl + Shift + V</span></div>
+    <div class="kbd-row"><span>Copy answer</span><span class="keys">Ctrl + C</span></div>
+    <div class="kbd-row"><span>Apply answer</span><span class="keys">Ctrl + Enter</span></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/splitting/1.0.6/splitting.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
